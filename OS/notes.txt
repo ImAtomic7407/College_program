@@ -1,0 +1,78 @@
+ 
+
+  ## touch -options/switches
+
+Touch -n -> to not create a new file if the named doesn't exist.
+Touch -a --> to know when it was created / or rather the update the current to it.
+Touch -m --> updates the modification time with the current one...it got updated at this moment.
+Touch -d "2026-01-01 10:10:10" file1.txt --> set a specific dat and time to the file metadata.
+Touch -r source.txt destination.txt --> copies the timestamp of the source to the target.txt.
+
+   ## cmp:
+ $$ Cmp file1.txt file2.txt --> outputs the difference of the two files in lines and bytes...It gives the first dffering bytes and the lines.
+
+     >> krsna@Krsnas-MacBook 26aug % cmp file1.txt file2.txt
+     >> file1.txt file2.txt differ: char 4, line 1
+ $$ cmp -l file1.txt file2.txt --> to get all the positions where the bytes are differing....
+
+      >> krsna@Krsnas-MacBook 26aug % cmp -l file1.txt file2.txt
+     4 167 150
+     5 150 145
+     6 141 154
+     7 164 154
+     8  40 157
+     9 151  40
+    10 163 144
+    cmp: EOF on file2.txt
+
+ $$ cmp -b file1.txt file2.txt ---> give the differing bytes in readable format.
+                  
+
+       >>krsna@Krsnas-MacBook 26aug % cmp -b file1.txt file2.txt
+           file1.txt file2.txt differ: char 4, line 1 is 167 w 150 h
+
+ $$ cmp -I 10 file1.txt file2.txt ---> does the comparing byte by byte but after skipping the x bytes writtent here.
+    
+    >> krsna@Krsnas-MacBook 26aug % cmp -i 2 file1.txt file2.txt
+        file1.txt file2.txt differ: char 2, line 1
+
+  ##COMM
+
+  Comparison-- Two compare things that exist or when we have sorted data we use comparison.
+             *Find what was added or changed between two files.
+             *check whether two sorted files contain common names.
+
+  Difference -- we uses difference on general files when they are not sorted are just general purposed commands.
+
+ $$ COMM syntax: comm [OPTIONS] File1 File2 ---> when we want to find the difference and both the files are sorted
+        Using same ordering rules.
+ 
+    Output: Column1: What is only in file one,
+            Column2: What is only in the file two.
+            Column3: What is in both the files.
+
+    >>krsna@Krsnas-MacBook 3sep % comm first.txt second.txt
+    Column1 Column2 Column3
+    hi
+    hello
+	    no
+	    sorry
+		    this
+		    is
+     krishna
+	  not krishna
+
+   $$ comm Options/switches
+   
+  -1 --> suppress the column 1
+  -2 --> suppress column 2
+  -3 --> suppress column 3
+  -check-order --> Check if the file is currently sorted or not.
+  -nocheck-order --> Don't check input order
+  -z --> use NUL characters as lines delimiter
+  -i/ -ignore-case -ignore-case --> Availability varies by implementation.Check local main page.
+
+$$ DIFF --> It compares the files and report the difference between them. It does need the file to be sorted.
+            It is used for source code, configuration and documentation.
+            it can show added, deleted or changed files. 
+            It produces human readable outputs.

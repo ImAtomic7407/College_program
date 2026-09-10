@@ -1,0 +1,31 @@
+Question 1.) Execute the following commands and write their output:
+  a.) pwd
+  b.) cat command- to create new file, to display file content, sending the content of the one file to another file with and without preserving the content of the 2nd file.
+  c.) mkdir command- cd to get into the dir and coming out of the directory.
+  d.)rmdir with options/switches
+
+Question 2.) Execute ls commands with different options...:
+   a.) ls -a -> List all the files including the hidden files starting with ","
+   b.) ls -l -> kist with long format- show permissions
+   c.) ls -la -> list long format including the hidden	 file.
+   d.) ls -lh -> list long format with readable file size.
+   e.) ls -r -> list in reverse order
+   f.) ls -R -> list recursively directory tree
+   g.) ls -s -> list file size
+   H.) ls -S -> sort by file size
+   I.) ls -t -> sort by time and date
+   J.) ls -X -> sort by extension name
+
+
+
+                                                                              Answers
+
+
+Q1.) 
+     A.) /Users/krsna/Desktop/College Program/OS/20aug ---This gives the current location in the system directory.
+     B.) cat questions.txt -- Displays the content of the file.
+         Cat>questions.txt -- To overwrite the content of the file...
+         cat>>questions.txt -- To append the content of the file.
+         Cat 
+Q2.)
+     A.) 
